@@ -2,10 +2,11 @@ from flask import Flask, jsonify, request, Response
 import json
 from services.properties_of_num import is_prime, is_perfect, is_armstrong, digit_sum
 from services.fun_fact import get_fun_fact
+from flask_cors import CORS
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/debug-routes", methods=["GET"])
 def debug_routes():
