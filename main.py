@@ -3,14 +3,8 @@ import json
 from services.properties_of_num import is_prime, is_perfect, is_armstrong, digit_sum
 from services.fun_fact import get_fun_fact
 
+
 app = Flask(__name__)
-
-@app.route("/", methods=["GET"])
-
-def home():
-    """Returns a welcome message"""
-    return jsonify({"message": "Welcome my Number Fun Fact API "})
-
 
 @app.route("/api/classify_number", methods=["GET"])
 
