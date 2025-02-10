@@ -6,6 +6,11 @@ from services.fun_fact import get_fun_fact
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "API is live!"}), 200
+
+
 @app.route("/api/classify_number", methods=["GET"])
 
 def classify_number():
