@@ -6,9 +6,15 @@ from services.fun_fact import get_fun_fact
 
 app = Flask(__name__)
 
+
+@app.route("/debug-routes", methods=["GET"])
+def debug_routes():
+    return jsonify({"routes": [str(rule) for rule in app.url_map.iter_rules()]}), 200
+
+
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "API is live!"}), 200
+    return jsonify({"message": "!"}), 200
 
 
 @app.route("/api/classify_number", methods=["GET"])
